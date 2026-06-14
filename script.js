@@ -150,9 +150,8 @@ backBtn?.addEventListener("click", () => {
         intro.style.opacity = "0";
 
         setTimeout(() => {
-            intro.classList.add("hidden");
-
-            experience.classList.remove("hidden");
+            intro.style.display = "none";
+experience.classList.remove("hidden");
 
             experience.style.opacity = "0";
 
@@ -321,12 +320,11 @@ petal.style.width =
 		const centerX = isMobile ? 160 : 350;
 		const centerY = isMobile ? 150 : 320;
 
-		const scale = isMobile ? 7 : 16;
+		const scale = isMobile ? 8.5 : 16;
+const step = isMobile ? 0.07 : 0.05;
 		
 
         const points = [];
-
-        const step = isMobile ? 0.10 : 0.05;
 
 for (let t = 0; t < Math.PI * 2; t += step) {
             const x = 16 * Math.pow(Math.sin(t), 3);
