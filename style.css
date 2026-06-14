@@ -661,16 +661,18 @@ button:hover {
 @media (max-width: 768px) {
 
     .main-layout {
+        width: 95%;
         flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        gap: 50px;
     }
 
-    .letter-column,
     .right-column {
         width: 100%;
-        max-width: 100%;
-        margin: 0;
+        margin-left: 0;
+    }
+
+    .letter-column {
+        width: 100%;
         padding: 0;
     }
 
@@ -678,13 +680,56 @@ button:hover {
 @media (max-width: 768px) {
 
     .music-player {
-        max-width: 95%;
-        padding: 12px;
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 14px;
     }
 
     .album-cover img {
-        width: 90px;
-        height: 90px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .music-info {
+        width: 100%;
+    }
+
+}
+@media (max-width: 768px) {
+
+    #typedText {
+        font-size: 0.88rem;
+        line-height: 1.8;
+        letter-spacing: 0;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .photo-gallery {
+        position: static;
+
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 8px;
+
+        height: auto;
+    }
+
+    .photo-gallery img {
+        position: static !important;
+
+        width: 100%;
+        height: 120px;
+
+        object-fit: cover;
+
+        transform: none !important;
     }
 
 }
