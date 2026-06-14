@@ -293,7 +293,12 @@ function typeText() {
 
             petal.src = flowers[Math.floor(Math.random() * flowers.length)];
             petal.style.left = Math.random() * 100 + "vw";
-            petal.style.width = 15 + Math.random() * 15 + "px";
+            const mobile = window.innerWidth <= 768;
+
+petal.style.width =
+    (mobile ? 10 : 15) +
+    Math.random() * (mobile ? 10 : 15) +
+    "px";
             petal.style.animationDuration = 8 + Math.random() * 8 + "s";
             petal.style.opacity = 0.4 + Math.random() * 0.6;
 
@@ -301,7 +306,7 @@ function typeText() {
 
             setTimeout(() => petal.remove(), 16000);
 
-        }, 1000);
+        }, window.innerWidth <= 768 ? 1800 : 1000);
     }
 
     /* =========================
@@ -321,7 +326,9 @@ function typeText() {
 
         const points = [];
 
-        for (let t = 0; t < Math.PI * 2; t += 0.05) {
+        const step = isMobile ? 0.10 : 0.05;
+
+for (let t = 0; t < Math.PI * 2; t += step) {
             const x = 16 * Math.pow(Math.sin(t), 3);
             const y = 13 * Math.cos(t)
                 - 5 * Math.cos(2 * t)
@@ -329,8 +336,8 @@ function typeText() {
                 - Math.cos(4 * t);
 
             points.push({
-                x: centerX + x * 16,
-                y: centerY - y * 16
+                x: centerX + x * scale,
+				y: centerY - y * scale
             });
         }
 
