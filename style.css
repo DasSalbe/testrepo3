@@ -553,6 +553,8 @@ button:hover {
     width: 550px;
     height: 900px;
     overflow: visible;
+    transform: scale(0.69);
+    transform-origin: top center;
 }
 
 .photo-gallery img {
