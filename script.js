@@ -293,7 +293,7 @@ function typeText() {
 
             petal.src = flowers[Math.floor(Math.random() * flowers.length)];
             petal.style.left = Math.random() * 100 + "vw";
-            petal.style.width = 25 + Math.random() * 25 + "px";
+            petal.style.width = 15 + Math.random() * 15 + "px";
             petal.style.animationDuration = 8 + Math.random() * 8 + "s";
             petal.style.opacity = 0.4 + Math.random() * 0.6;
 
@@ -301,7 +301,7 @@ function typeText() {
 
             setTimeout(() => petal.remove(), 16000);
 
-        }, 250);
+        }, 1000);
     }
 
     /* =========================
@@ -312,8 +312,12 @@ function typeText() {
         const container = document.getElementById("flowerHeart");
         if (!container) return;
 
-        const centerX = 350;
-        const centerY = 320;
+        const isMobile = window.innerWidth <= 768;
+		const centerX = isMobile ? 160 : 350;
+		const centerY = isMobile ? 150 : 320;
+
+		const scale = isMobile ? 7 : 16;
+		
 
         const points = [];
 
